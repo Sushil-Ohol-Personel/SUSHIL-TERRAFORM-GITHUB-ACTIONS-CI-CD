@@ -8,8 +8,8 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
-workflow_defaults:
+on:
+  workflow_dispatch:
 
 jobs:
   terraform:
