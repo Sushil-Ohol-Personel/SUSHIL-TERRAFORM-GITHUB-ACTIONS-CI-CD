@@ -14,7 +14,7 @@ on:
 jobs:
   terraform-setup:
     runs-on: ubuntu-latest
-    name: 'Terraform'
+    name: 'Terraform-SETUP'
     environment: dev
     
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
@@ -49,4 +49,11 @@ jobs:
     - name: Terraform Validate
       id: validate
       run: terraform validate -no-color
+    
+    - name: Terraform Plan
+      id: plan
+      run: |
+         terraform plan -no-color > plan.tf
+         cat plan.tf
+      continue-on-error: true  
           
