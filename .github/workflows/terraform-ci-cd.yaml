@@ -55,5 +55,11 @@ jobs:
       run: |
          terraform plan -no-color > plan.tf
          cat plan.tf
-      continue-on-error: true  
+      continue-on-error: true 
+     
+    - name: Terraform APPLY
+      id: apply
+      run: |
+         terraform apply plan.tf --auto-aprrove
+      continue-on-error: true   
           
