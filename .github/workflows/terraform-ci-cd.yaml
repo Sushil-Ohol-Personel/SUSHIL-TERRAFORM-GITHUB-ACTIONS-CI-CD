@@ -1,5 +1,5 @@
 
-name: CI
+name: "CI"
 
 # Controls when the workflow will run
 on:
@@ -12,8 +12,8 @@ on:
 workflow_defaults:
 
 jobs:
-  runs-on: ubuntu-latest
   terraform:
+    runs-on: ubuntu-latest
     name: 'Terraform'
     environment: dev
     
