@@ -1,0 +1,34 @@
+# ─── Terraform ─────────────────────────────────────────────
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+*.tfvars.json
+.terraform.lock.hcl
+crash.log
+terraform-provider-*
+
+# ─── VS Code ───────────────────────────────────────────────
+.vscode/
+.history/
+.code-workspace
+
+# ─── System Files ──────────────────────────────────────────
+.DS_Store        # macOS
+Thumbs.db        # Windows
+*~               # Linux temp files
+
+# ─── Editor Backup Files ───────────────────────────────────
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# ─── Logs and Env Files ────────────────────────────────────
+*.log
+.env
+.env.*
+
+# ─── GitHub Actions (optional) ─────────────────────────────
+.github/workflows/*.bak
+.github/workflows/*.log
