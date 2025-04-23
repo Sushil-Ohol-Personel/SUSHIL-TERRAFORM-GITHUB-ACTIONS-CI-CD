@@ -22,17 +22,31 @@ jobs:
       run:
         shell: bash
     steps:
+      
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v4
+   
+    - name: Terraform
+      uses: hashicorp/setup-terraform@v3
+    
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-2
-    - name: Initialise project and view terraform plan
-      run: |
-         terraform fmt
-         terraform init 
+    
+    - name: Terraform fmt
+      id: fmt
+      run: terraform fmt -check
+      continue-on-error: true   
+    
+    - name: Terraform Init
+      id: init
+      run: terraform init -input=false
+    
+    - name: Terraform Validate
+      id: validate
+      run: terraform validate -no-color
           
