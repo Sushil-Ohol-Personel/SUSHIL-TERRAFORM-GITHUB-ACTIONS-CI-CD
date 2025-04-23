@@ -32,5 +32,5 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-2
     - name: Initialise project and view terraform plan
-      run:  echo "pwd"   
+      run:  echo pwd 
           
