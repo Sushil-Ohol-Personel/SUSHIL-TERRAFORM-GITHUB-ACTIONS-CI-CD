@@ -60,7 +60,7 @@ jobs:
     - name: Terraform APPLY
       id: apply
       run: |
-         terraform apply plan.tf -auto-approve
+         terraform apply plan.tf 
         # terraform apply -input=plan.tf --auto-aprrove
       continue-on-error: true   
           
